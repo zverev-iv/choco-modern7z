@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>modern7z</id>
+    <version>1.8.7</version>
+    <packageSourceUrl>https://github.com/zverev-iv/choco-modern7z</packageSourceUrl>
+    <owners>zverev-iv</owners>
+    <title>modern7z (Install)</title>
+    <authors>Dec Software</authors>
+    <projectUrl>https://www.tc4shell.com/en/7zip/modern7z/</projectUrl>
+    <copyright>2020 Dec Software</copyright>
+    <licenseUrl>https://www.tc4shell.com/en/termsofuse/</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <tags>modern7z 7zip-zstd 7zip 7-zip zstd zstandard archive</tags>
+    <summary>Modern7z is a plugin for the popular 7-Zip archiver with zstd support</summary>
+    <description>Modern7z is a plugin for the popular 7-Zip archiver. It adds support for the following leading-edge compression methods:
+- Zstandard v1.4.5
+- Brotli v1.0.7
+- LZ4 v1.9.2
+- LZ5 v1.5
+- Lizard v1.0
+- Fast LZMA2 v0.9.2
+
+Each of these compression methods can only pack a single file. Multiple files are usually pre-packed into a container like TAR, and then it is compressed with the method. You can also use any of these compression methods as a codec when packing files into a .7z file.
+Modern7z also allows you to unpack files from Zip archives packed with ZSTD method.
+    </description>
+    <releaseNotes>Current version
+    
+Plugin version: 1.8.7
+Distribution package release date: 30 May 2020
+    </releaseNotes>
+    <dependencies>
+        <dependency id="7zip.install" version="19.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

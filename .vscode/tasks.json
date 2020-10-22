@@ -1,0 +1,32 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Package",
+            "type": "shell",
+            "command": "choco pack \"$((Get-ChildItem .\\*\\*.nuspec).FullName)\"",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": ["Check Scripts"]
+        },
+        {
+            "label": "Check Scripts",
+            "type": "shell",
+            "command": "Invoke-ScriptAnalyzer \"$((Get-ChildItem .\\*\\tools).FullName)\"",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build",
+            "dependsOn": ["Check Scripts", "Build Package"]
+        }
+    ]
+}

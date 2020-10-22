@@ -1,0 +1,10 @@
+os: windows
+language: shell
+branches:
+  only:
+  - master
+script:
+- choco pack modern7z\\modern7z.nuspec
+after_script:
+- choco apikey --key $CHOCOAPIKEY --source https://push.chocolatey.org/
+- choco push
