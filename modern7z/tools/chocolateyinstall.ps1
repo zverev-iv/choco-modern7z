@@ -21,7 +21,7 @@ $installLocation = "$(Join-Path $7zLocation "Codecs")"
 Write-Host "Install libraries" -ForegroundColor Blue
 
 New-Item -ItemType directory -Path $installLocation -Force
-Expand-Archive -LiteralPath $archiveLocation -DestinationPath $extractLocation
+Get-ChocolateyUnzip -FileFullPath $archiveLocation -Destination $extractLocation
 if ((Get-OSArchitectureWidth 64) -and $env:chocolateyForceX86 -ne $true) {
        $extractLocationArch = Join-Path $extractLocation '64'
 } else {
