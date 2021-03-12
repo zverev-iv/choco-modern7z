@@ -12,7 +12,6 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "dependsOn": ["Check Scripts"]
         },
         {
             "label": "Check Scripts",
